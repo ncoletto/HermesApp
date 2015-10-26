@@ -1,0 +1,256 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hermes Inteligente App</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" href="themes/hermes.min.css" />
+<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+
+<link href='http://fonts.googleapis.com/css?family=Squada+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Russo+One' rel='stylesheet' type='text/css'>
+
+
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+
+	
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    // Wait for device API libraries to load
+    //
+	
+    document.addEventListener("deviceready", arrancar, false);
+
+    // device APIs are available
+    //
+
+		function onSuccess(acceleration) {
+			
+			document.getElementById("incidente").innerHTML = acceleration.y;
+			
+			if(acceleration.y > 10) {
+				
+				alert('Incidente detectado, enviando alerta sms...')
+			
+		}
+		}
+		
+		function onError() {
+			alert('onError!');
+		};
+		
+		function arrancar() {
+		
+		var options = { frequency: 1000 };  // Update every 3 seconds
+		
+		var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+
+		}
+
+    </script>
+
+
+</head>
+<body>
+<!-- primera pagina -->
+    <!------------    LOGIN    !------------>
+	<div data-role="page" id="inicio">
+	    
+            <div id="fondo-login">
+
+            <!--- HEADER !-->
+            <div data-role="header" class="none">
+            <img id="logo" src="img/logo.png">
+            </div>
+
+
+            <!--- CONTENIDO !-->
+            <div data-role="content">	
+            <form id="formulario" >
+            <input type="text" id="nombredeusuario" name="nombredeusuario">
+            <input type="password" id="clave" name="clave">
+            <input type="submit" value="Login">
+            <!--input type="button" value="Registrarse"-->
+            </form>	
+            </div>
+            </div>
+        
+	</div>
+
+
+
+<!-- segunda pagina -->
+
+
+<div data-role="page" id="tiempo" data-url="tiempo">
+    <div data-role="header" data-theme="a">
+        <h1>Datos del Tiempo</h1>
+        <a href="#left-panel" data-icon="carat-r" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open left panel</a>
+        <a href="#right-panel" data-icon="carat-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon">Open right panel</a>
+    </div><!-- /header -->
+    <div role="main" class="ui-content">
+
+            <div data-role="header" class="none">
+            	
+           		<a href="#tiempo"><img id="logo" src="img/tiempo.jpg"></a>
+            </div>
+
+
+     </div><!-- /content -->
+    <div data-role="panel" id="left-panel" data-theme="a">
+        <p>Menú</p>
+
+            <ul data-role="listview">
+                <li><a href="#tiempo">Tiempo</a></li>
+                <li><a href="#mapa">Mapa</a></li>
+                <li><a href="#bluetooth">Bluetooth</a></li>
+                <li><a href="#inicio">Salir</a></li>
+            </ul>
+  
+
+    </div><!-- /panel -->
+    <div data-role="panel" id="right-panel" data-display="push" data-position="right" data-theme="a">
+        <p>CONFIGURACIÓN</p>
+            <form>
+                <label for="flip-1">Música</label>
+                <select id="flip-1" name="flip-1" data-role="slider">
+                    <option value="off">NO</option>
+                    <option value="on">SI</option>
+                </select>
+            </form>
+            <form>
+                <label for="flip-1">Llamadas</label>
+                <select id="flip-1" name="flip-1" data-role="slider">
+                    <option value="off">NO</option>
+                    <option value="on">SI</option>
+                </select>
+            </form>
+            <form>
+                <label for="flip-1">Alerta Automática</label>
+                <select id="flip-1" name="flip-1" data-role="slider">
+                    <option value="off">NO</option>
+                    <option value="on">SI</option>
+                </select>
+            </form>
+            
+            <div class="ui-field-contain">
+                <label for="textinput-fc"></label>
+                <input type="text" name="textinput-fc" id="textinput-fc" placeholder="Nro. de teléfono S.O.S." value="">
+            </div>
+
+    </div><!-- /panel -->
+
+<!-- /footer -->
+
+  <div data-role="footer" data-position="fixed">
+    <p id="incidente"></p>
+  </div>
+
+
+</div>
+
+
+
+<!-- tercera pagina -->
+<div data-role="page" id="mapa">
+  <div data-role="header">
+    <h1>Mapa</h1>
+  </div>
+  <div role="main" class"ui-content">
+    <p>Ubica un destino para activar el Gps sonoro.</p>
+  </div>
+  <div data-role="footer" data-position="fixed">
+    <p><a href="#primera" data-transition="slide" data-direction="reverse">Ir a la primera</a></p>
+  </div>
+  
+  <iframe width="800" height="600" frameborder="0" style="border:0"
+src="https://www.google.com/maps/embed/v1/place?q=Hidalgo+775,+Buenos+Aires,+Argentina&key=AIzaSyBmFQH_cVHNG6QGfg0mNJNOREojlmWzDok"></iframe>
+	
+  
+</div>
+
+<!-- cuarta pagina -->
+<div data-role="page" id="bluetooth">
+  <div data-role="header">
+    <h1>Bluetooth</h1>
+  </div>
+  <div role="main" class"ui-content">
+    <p>Conectate con otros Hermes</p>
+  </div>
+  
+              <div data-role="header" class="none">
+           		<a href="#tiempo"><img id="logo" src="img/fondo-bluetooth.jpg"></a>
+            </div>
+
+  
+  <div data-role="footer" data-position="fixed">
+    <p><a href="#primera" data-transition="slide" data-direction="reverse">Ir a la primera</a></p>
+  </div>
+</div>
+
+
+
+<script>
+
+    
+	$('#formulario').submit(function() {
+	// recolecta los valores que inserto el usuario
+	var datosUsuario = $("#nombredeusuario").val()
+	var datosPassword = $("#clave").val()
+
+
+	archivoValidacion = "http://localhost/hermestheme/validacionReal.php?jsoncallback=?" 
+	 
+	$.getJSON( archivoValidacion, { usuario:datosUsuario ,password:datosPassword}) 
+	.done(function(respuestaServer) {
+
+
+		if(respuestaServer.validacion == "ok"){ 
+
+			$.mobile.changePage("#tiempo"); // Redirige a esa page automaticamente va una vez
+
+			$("#tiempo").on("pageshow", function(){ //al mostrarse esa pagina pasa algo.
+
+				//esta linea estaba comentada
+				$("#titulo").append("Bienvenido, "+ respuestaServer[0].idUsuario);
+                var elementos = Object.keys(respuestaServer).length;
+
+			});
+
+            
+            
+	}else{
+
+	    alert("Datos inválidos");
+	}
+	
+
+	})
+
+
+	return false;
+
+
+	})
+
+
+</script>
+
+    
+   
+    
+    
+
+
+<script type="text/javascript" src="getProjects.js"></script> 
+
+
+
+
+</body>
+</html>
