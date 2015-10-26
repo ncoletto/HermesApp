@@ -6,7 +6,7 @@
         id        = "com.coletto.acelerometro"
         version   = "1.0.0">
 
-    <name>Acelerometro</name>
+    <name>HermesApp</name>
 
     <description>
         Muestra las aceleración de tu ubicación
