@@ -31,42 +31,18 @@ if(mysqli_num_rows($sqlQry)>0){
 
    //echo "hola";
 
-//	$fila = mysqli_fetch_array($sqlQry); //hago esto para poder extraer el id usuario que peciso.
+	$fila = mysqli_fetch_array($sqlQry); //hago esto para poder extraer el id usuario que peciso.
     
-//	$idUsuario =  $fila["idUsuario"];
-    
+	$idUsuario =  $fila["idUsuario"];
+    $nombreUsuario = $fila["nombreUsuario"];
 
-	// nueva consulta para listar proyectos en base al id del usuario que se registro.
-
-
-	//$sqlP = "SELECT * FROM articulo where idUsuario = '$idUsuario'";
-    
-    
-    // Consulta que pide articulo que pertenecen al genero que prefiere el usuario logeado
-//    $sqlP = "SELECT * FROM articulo
-//INNER JOIN pertenece on articulo.idArticulo = pertenece.idArticulo
-//INNER JOIN genero on pertenece.idGenero = genero.idGenero
-//INNER JOIN prefiere on genero.idGenero = prefiere.idGenero
-//WHERE prefiere.idUsuario = '$idUsuario'";
-    
-    
-//     $sqlFavoritos = "SELECT * FROM articulo
-//INNER JOIN marcafavorito on articulo.idArticulo = marcafavorito.idArticulo
-//WHERE marcafavorito.idUsuario = '$idUsuario'";
-    
-//	$sqlQryP = mysqli_query($conexion,$sqlP);
-        
-	
-
-//	while ($r = mysqli_fetch_assoc($sqlQryP)){ // tiene q ser assoc para que no me cree arrays multimedimensional, probar que muestra un echo con array y otro con assoc
-//		$resultados[] = $r;
-//	}
-	
+	//nueva consulta para listar proyectos en base al id del usuario que se registro.
 
 
     
-	// echo json_encode($array);
-    // echo $resultados[0]["tituloES"];
+//	 echo json_encode($fila);
+//   echo $resultados[0]["idUsuario"];
+//	 echo $nombreUsuario;
 	
 
 }else{
