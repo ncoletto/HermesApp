@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="themes/hermes.min.css" />
 	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
-	<!--link rel="stylesheet" href="themes/style.css" /-->
+	<link rel="stylesheet" href="themes/style.css" />
 	
 	
 	
@@ -14,7 +14,7 @@
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     
     
-      <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+      <!--script type="text/javascript" charset="utf-8" src="cordova.js"></script-->
     <script type="text/javascript" charset="utf-8">
 
     // Wait for device API libraries to load
@@ -31,7 +31,7 @@
 			
 			if(acceleration.y > 10) {
 				
-				alert('Incidente detectado, enviando alerta sms...')
+				alert('Incidente detectado, enviando alerta sms a '+datosUsuario)
 			
 		}
 		}
@@ -117,7 +117,7 @@
 
 
     <div data-role="panel" id="right-panel" data-display="push" data-position="right" data-theme="a">
-        <p id="configuracion"></p>
+        <p id="configuracion">CONFIGURACIÓN </p>
             <form>
                 <label for="flip-1">Música</label>
                 <select id="flip-1" name="flip-1" data-role="slider">
@@ -193,7 +193,7 @@
 
 
     <div data-role="panel" id="right-panel" data-display="push" data-position="right" data-theme="a">
-        <p id="configuracion"></p>
+        <p id="configuracion">CONFIGURACIÓN </p>
             <form>
                 <label for="flip-1">Música</label>
                 <select id="flip-1" name="flip-1" data-role="slider">
@@ -268,7 +268,7 @@
 
 
     <div data-role="panel" id="right-panel" data-display="push" data-position="right" data-theme="a">
-        <p id="configuracion"></p>
+        <p id="configuracion">CONFIGURACIÓN </p>
             <form>
                 <label for="flip-1">Música</label>
                 <select id="flip-1" name="flip-1" data-role="slider">
@@ -333,7 +333,7 @@
 
 				//muestro un ID de algo con el dato que traje de la base
 				//$("#titulo").append("Bienvenido, "+ datosUsuario);
-				$("#configuracion").append("CONFIGURACIÓN: "+ datosUsuario);
+				$("#configuracion").append(datosUsuario);
                 var elementos = Object.keys(respuestaServer).length;
 
 			});
