@@ -79,13 +79,10 @@
 				<input type="submit" value="Login">
 				<a href="#tiempo" data-role="button">Ingresar</a>            
 				</form>	
+				<button onclick="window.plugins.socialsharing.shareViaSMS('Alerta SMS', '1161792834', function(msg) {console.log('ok: ' + msg)}, function(msg) {alert('error: ' + msg)})">SMS</button>
+				<button onclick="window.plugins.socialsharing.shareViaTwitter('#incidente')">Twitter</button>
 				</div>
             </div>
-			
- 		<div data-role="footer" data-position="fixed">
-			<p id="incidente"></p>
-		</div><!-- /footer -->
-       
 	</div>
 
 <!-- pagina -->
@@ -99,7 +96,6 @@
             <div data-role="content" class="none">
            		<img id="tiempoimg" src="img/tiempo.jpg">
             </div>
-			<a href="#demo-intro" data-rel="back" class="back-btn" data-role="button" data-mini="true" data-inline="true" data-icon="back" data-iconpos="right">Back to demo intro</a>
 		</div><!-- /content -->
 			<div data-role="panel" id="left-panel" data-display="push" data-theme="a">
 			        <p>Menú</p>
@@ -157,7 +153,6 @@
             <div data-role="content" class="none">
            		<img id="tiempoimg" src="img/mapa.jpg">
             </div>
-			<a href="#demo-intro" data-rel="back" class="back-btn" data-role="button" data-mini="true" data-inline="true" data-icon="back" data-iconpos="right">Back to demo intro</a>
 		</div><!-- /content -->
 			<div data-role="panel" id="left-panel" data-display="push" data-theme="a">
 			        <p>Menú</p>
@@ -208,7 +203,7 @@
 	<!-- pagina -->
 	<div data-role="page" id="bluetooth" data-theme="a" data-url="bluetooth">
 		<div data-role="header" data-theme="a">
-			<h1>TIEMPO</h1>
+			<h1>BLUETOOTH</h1>
 			<a href="#left-panel" data-theme="a" data-icon="arrow-r" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">Open left panel</a>
 			<a href="#right-panel" data-theme="a" data-icon="arrow-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">Open right panel</a>
 		</div><!-- /header -->
@@ -216,7 +211,6 @@
             <div data-role="content" class="none">
            		<img id="tiempoimg" src="img/bluetooth.jpg">
             </div>
-			<a href="#demo-intro" data-rel="back" class="back-btn" data-role="button" data-mini="true" data-inline="true" data-icon="back" data-iconpos="right">Back to demo intro</a>
 		</div><!-- /content -->
 			<div data-role="panel" id="left-panel" data-display="push" data-theme="a">
 			        <p>Menú</p>
