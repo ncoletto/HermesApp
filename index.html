@@ -80,8 +80,7 @@
 				<input type="submit" value="Login">
 				<a href="#tiempo" data-role="button">Ingresar</a>            
 				</form>	
-				<button onclick="window.plugins.socialsharing.shareViaSMS('Alerta SMS', '1161792834', function(msg) {console.log('ok: ' + msg)}, function(msg) {alert('error: ' + msg)})">SMS</button>
-				<button onclick="window.plugins.socialsharing.shareViaTwitter('#incidente')">Twitter</button>
+				<!--button onclick="window.plugins.socialsharing.shareViaSMS('Alerta SMS', '1161792834', function(msg) {console.log('ok: ' + msg)}, function(msg) {alert('error: ' + msg)})">SMS</button-->
 				</div>
             </div>
 	</div>
@@ -135,6 +134,8 @@
 						<div class="ui-field-contain">
 						    <label for="textinput-fc"></label>
 						    <input type="text" name="textinput-fc" id="textinput-fc" placeholder="Nro. de teléfono S.O.S." value="">
+							<button onclick="window.plugins.socialsharing.shareViaTwitter('#incidente')">Twitter</button>
+
 						</div>
 		</div><!-- /panel -->
 		
