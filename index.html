@@ -204,7 +204,7 @@ src="https://www.google.com/maps/embed/v1/place?q=Hidalgo+775,+Buenos+Aires,+Arg
 	var datosPassword = $("#clave").val()
 
 
-	archivoValidacion = "http://localhost/hermestheme/validacionReal.php?jsoncallback=?" 
+	archivoValidacion = "http://www.hermesinteligente.com/app/validacionReal.php?jsoncallback=?"
 	 
 	$.getJSON( archivoValidacion, { usuario:datosUsuario ,password:datosPassword}) 
 	.done(function(respuestaServer) {
