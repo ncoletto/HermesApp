@@ -76,6 +76,7 @@
             <input type="text" id="nombredeusuario" name="nombredeusuario">
             <input type="password" id="clave" name="clave">
             <input type="submit" value="Login">
+			<a href="#tiempo">Ir a Tiempo</a>
             </form>	
             </div>
             </div>
@@ -115,7 +116,7 @@
 
     </div><!-- /panel -->
     <div data-role="panel" id="right-panel" data-display="push" data-position="right" data-theme="a">
-        <p>CONFIGURACIÓN</p>
+        <p id="configuracion">CONFIGURACIÓN </p>
             <form>
                 <label for="flip-1">Música</label>
                 <select id="flip-1" name="flip-1" data-role="slider">
@@ -202,7 +203,7 @@ src="https://www.google.com/maps/embed/v1/place?q=Hidalgo+775,+Buenos+Aires,+Arg
 	// recolecta los valores que inserto el usuario
 	var datosUsuario = $("#nombredeusuario").val()
 	var datosPassword = $("#clave").val()
-
+	var nombre = datosUsuario
 
 	archivoValidacion = "http://www.hermesinteligente.com/app/validacionReal.php?jsoncallback=?"
 	 
@@ -216,8 +217,9 @@ src="https://www.google.com/maps/embed/v1/place?q=Hidalgo+775,+Buenos+Aires,+Arg
 
 			$("#tiempo").on("pageshow", function(){ //al mostrarse esa pagina pasa algo.
 
+				
 				//esta linea estaba comentada
-				$("#titulo").append("Bienvenido, ");
+				$("#configuracion").append(nombre);
                 var elementos = Object.keys(respuestaServer).length;
 
 			});
