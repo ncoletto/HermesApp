@@ -36,8 +36,9 @@
 			
 			if(acceleration.y > 10) {
 				
-				alert('Incidente detectado, enviando alerta sms...')
-			
+			//alert('Incidente detectado, enviando alerta sms...')
+			window.plugins.socialsharing.shareViaSMS('Alerta SMS', '1161792834', function(msg) {console.log('ok: ' + msg)}, function(msg) {alert('error: ' + msg)})
+
 		}
 		}
 		
